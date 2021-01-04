@@ -25,7 +25,7 @@ h1 {
 }
 input {
   transition: 0.5s ease-in-out;
-  margin: 15px 0;
+  margin: 10px 0;
   font-size: 18px;
   padding: 5px;
   background: rgba(0, 0, 0, 0.11);
@@ -45,7 +45,9 @@ button {
   font-size: 18px;
   transition: 0.5s ease-in-out;
 }
-
+label {
+  font-size: 12px;
+}
 form {
   height: 20%;
   display: flex;
@@ -55,7 +57,7 @@ form {
   margin: 5px auto;
 }
 form button {
-  background: rgb(255, 25, 140);
+  background: rgb(25, 67, 255);
   width: 100%;
   margin: 5px 0;
   color: white;
@@ -65,11 +67,12 @@ form button {
   color: white;
 }
 .break {
-  background: rgb(10, 252, 83);
+  background: rgb(0, 199, 116);
+  color: #000000;
 }
 .reset {
-  background: rgb(255, 51, 51);
-  color: white;
+  background: rgb(250, 69, 109);
+  color: #000000;
 }
 .pause {
   background: rgb(253, 143, 17);
@@ -104,7 +107,7 @@ form button {
 
 footer {
   position: fixed;
-  bottom: 40px;
+  bottom: 4px;
   text-align: center;
   width: 80%;
   margin: 0 auto;
@@ -158,5 +161,14 @@ footer {
   }
   footer {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  form {
+    height: 40%;
+  }
+  footer {
+    position: static;
   }
 }
