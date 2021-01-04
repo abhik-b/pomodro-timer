@@ -15,4 +15,12 @@ This site is built with :
 
 ---
 
-Scores
+#Scores
+
+Lighthouse scores:
+
+![Lighthousescore](https://github.com/abhik-b/pomodro-timer/blob/master/lighthouse.png)
+
+PageSpeed Insights scores:
+
+![Pagespeedinsights](https://github.com/abhik-b/pomodro-timer/blob/master/pagespeedinsights.png)
