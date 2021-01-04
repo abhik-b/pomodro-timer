@@ -13,9 +13,9 @@ startBtn.addEventListener("click", () => {
   let btn = localStorage.getItem("btn");
 
   if (btn === "focus") {
-    mins = +localStorage.getItem("focusTime");
+    mins = +localStorage.getItem("focusTime") || 1;
   } else {
-    mins = +localStorage.getItem("breakTime");
+    mins = +localStorage.getItem("breakTime") || 1;
   }
 
   seconds = mins * 60;

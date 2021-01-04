@@ -1,6 +1,6 @@
-# Pomodro Timer with 🛎
+# Pomodoro Timer with 🛎
 
-This is a simple pomodro timer built for personal use ( any one can use ) for productivity💯
+This is a simple pomodoro timer built for personal use ( any one can use ) for productivity💯
 
 This site is built with :
 
@@ -15,7 +15,7 @@ This site is built with :
 
 ---
 
-#Scores
+#Scores :
 
 Lighthouse scores:
 
