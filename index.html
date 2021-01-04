@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timer With 🔔| abhik B</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Pomodro ⏲ with 🛎</h1>
+
+    <div class="clock">
+      <div class="mins">0</div>
+      <div>:</div>
+      <div class="secs">00</div>
+      <audio
+        src="http://soundbible.com/mp3/service-bell_daniel_simion.mp3"
+      ></audio>
+      <svg class="progress-ring" height="120" width="120">
+        <circle
+          class="progress-ring__circle"
+          stroke-width="8"
+          fill="transparent"
+          r="50"
+          cx="60"
+          cy="60"
+        />
+      </svg>
+    </div>
+
+    <div class="btn-group">
+      <button class="start">start focus</button>
+      <button class="reset">reset</button>
+      <button class="pause">pause</button>
+    </div>
+
+    <form action=".">
+      <input type="number" value="1" id="focusTime" />
+      <input type="number" value="1" id="breakTime" />
+      <button type="submit">Save settings</button>
+    </form>
+    <footer>Please Like Share Subscribe 🙏</footer>
+
+    <script src="settings.js"></script>
+    <script src="timer.js"></script>
+    <script src="progress.js"></script>
+  </body>
+</html>
