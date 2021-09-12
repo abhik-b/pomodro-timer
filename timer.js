@@ -5,6 +5,8 @@ const mindiv = document.querySelector(".mins");
 const secdiv = document.querySelector(".secs");
 
 const startBtn = document.querySelector(".start");
+const sessionText = document.querySelector(".session");
+
 localStorage.setItem("btn", "focus");
 
 let initial, totalsecs, perc, paused, mins, seconds;
@@ -22,6 +24,10 @@ startBtn.addEventListener("click", () => {
   totalsecs = mins * 60;
   setTimeout(decremenT(), 60);
   startBtn.style.transform = "scale(0)";
+  pauseBtn.style.transform = "scale(1)";
+  resetBtn.style.transform = "scale(1)";
+  circle.style.transition = "0.5s";
+  sessionText.style.opacity = "1";
   paused = false;
 });
 
@@ -47,13 +53,15 @@ function decremenT() {
     let btn = localStorage.getItem("btn");
 
     if (btn === "focus") {
-      startBtn.textContent = "start break";
+      sessionText.textContent = "😌 Break";
+      startBtn.textContent = " ";
       startBtn.classList.add("break");
       localStorage.setItem("btn", "break");
     } else {
       startBtn.classList.remove("break");
-      startBtn.textContent = "start focus";
+      startBtn.textContent = " ";
       localStorage.setItem("btn", "focus");
+      sessionText.textContent = "🤓 Focus";
     }
     startBtn.style.transform = "scale(1)";
   }

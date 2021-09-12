@@ -1,24 +1,34 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&display=swap");
+
+:root {
+  --clock-element-width-height:240px;
+}
+
 *,
 *::before,
 *::after {
   padding: 0;
   margin: 0;
-
   box-sizing: border-box;
 }
 
 body {
-  height: 100vh;
   padding: 35px;
-
-  background: rgb(243, 243, 243);
-  color: #131313;
+  background-color: #272f3f;
+  color: #eee;
   font-family: "Montserrat", sans-serif;
 }
+#wrapper-main {
+  max-width: 760px;
+  margin: 20px auto 50px;
+  padding: 45px 60px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px 0px rgb(0 0 29 / 5%);
+  background-color: #2f384a;
+}
 h1 {
-  margin: 15px 0;
+  margin: 0 0 35px;
   font-weight: 900;
   font-size: 28px;
   text-align: center;
@@ -30,56 +40,83 @@ input {
   padding: 5px;
   background: rgba(0, 0, 0, 0.11);
   border: none;
+  color: #eee;
 }
 .btn-group {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 10%;
-  margin: 35px 0;
+  height: 7%;
+  position: relative;
 }
+
 button {
   margin: 5px;
-  padding: 10px;
+  padding: 10px 16px;
   border: none;
-  font-size: 18px;
-  transition: 0.5s ease-in-out;
-}
+  transition: 0.1s ease-in-out;
+  border-radius: 4px;
+  width: 100%;
+  font-size: 17px;
+  font-weight: 600;
+  color: #eee;
+  line-height: 21px;
+  background: transparent;
+} 
 label {
   font-size: 12px;
 }
 form {
-  height: 20%;
   display: flex;
   flex-direction: column;
   padding: 0;
   max-width: 370px;
-  margin: 5px auto;
+  margin: 35px auto 0px;
 }
 form button {
-  background: rgb(25, 67, 255);
+  background: transparent;
   width: 100%;
   margin: 5px 0;
-  color: white;
+  color: #eee;
+  border: 1px solid #fac7c72a;
+}
+form p {
+  margin: 7px 0 0;
+  font-size: 14px; 
+  color: rgba(255, 255, 255, 0.45);
+  text-align: center;
+}
+.start, .pause {
+  color: #eee;
+
+  position: absolute;
+  height: 100%;
 }
 .start {
-  background: rgb(48, 33, 253);
-  color: white;
+  z-index: 1;
 }
-.break {
-  background: rgb(0, 199, 116);
-  color: #000000;
+button i {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  position: relative;
+  top: 1px;
 }
 .reset {
-  background: rgb(250, 69, 109);
-  color: #000000;
+  position: absolute;
+  bottom: 55px;
+  transform: scale(0);
+  z-index: 2;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+  line-height: 20px;
 }
 .pause {
-  background: rgb(253, 143, 17);
-}
-.resume {
-  background: rgb(131, 10, 252);
-  color: white;
+  transform: scale(0);
+  z-index: 0;
+
 }
 .clock {
   padding: 3px;
@@ -88,10 +125,22 @@ form button {
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  height: 30%;
-  font-size: 24px;
+  height: var(--clock-element-width-height);
+  font-size: 36px;
 }
-.progress-ring {
+.clock svg {
+  width: var(--clock-element-width-height);
+  height: var(--clock-element-width-height);
+}
+.clock .session {
+  position: absolute;
+  top: 55px;
+  font-weight: 400;
+  font-size: 14px;
+  opacity: 0;
+  line-height: 20px;
+}
+.progress-ring, .static-ring {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -99,10 +148,15 @@ form button {
 }
 
 .progress-ring__circle {
-  transition: 0.5s;
+  transition: 0.0s;
   transform: rotate(-90deg);
   transform-origin: 50% 50%;
-  stroke: rgb(51, 65, 255);
+  stroke: rgb(253, 143, 17);
+  z-index: 2;
+}
+
+.static-ring__circle {
+  stroke: #fac7c72a;
 }
 
 footer {
@@ -111,14 +165,19 @@ footer {
   text-align: center;
   width: 80%;
   margin: 0 auto;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.45);
+}
+footer a {
+  color: rgba(255, 255, 255, 0.45);
 }
 
 .danger {
-  stroke: rgb(243, 17, 28);
+  stroke: rgb(17, 243, 28);
   animation: pulse 0.9s ease-in-out infinite;
 }
 
-@keyframes pulse {
+/*@keyframes pulse {
   0%,
   100% {
     transform: rotate(-90deg) scale(1);
@@ -129,15 +188,16 @@ footer {
   75% {
     transform: rotate(-90deg) scale(0.8);
   }
-}
+}*/
 
 @media screen and (min-width: 768px) {
   body {
     display: grid;
     grid-template-areas:
-      "head head"
-      "clock form"
-      "btns ji";
+      "head"
+      "clock"
+      "form"
+      "btns";
   }
   .btn-group {
     grid-area: btns;
@@ -145,7 +205,6 @@ footer {
   }
   .clock {
     grid-area: clock;
-    height: 100%;
   }
   h1 {
     grid-area: head;
@@ -156,8 +215,6 @@ footer {
     align-self: center;
     justify-self: center;
     grid-area: form;
-    width: 50%;
-    justify-content: space-around;
   }
   footer {
     width: 100%;
@@ -165,9 +222,6 @@ footer {
 }
 
 @media screen and (max-width: 375px) {
-  form {
-    height: 40%;
-  }
   footer {
     position: static;
   }

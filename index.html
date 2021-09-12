@@ -1,57 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Timer With 🔔| abhik B</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Timer With 🔔| abhik B</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div id="wrapper-main">
     <h1>Pomodro ⏲ with 🛎</h1>
 
     <figure class="clock">
       <div class="mins">0</div>
       <div>:</div>
       <div class="secs">00</div>
-      <audio
-        src="http://soundbible.com/mp3/service-bell_daniel_simion.mp3"
-      ></audio>
-      <svg class="progress-ring" height="120" width="120">
-        <circle
-          class="progress-ring__circle"
-          stroke-width="8"
-          fill="transparent"
-          r="50"
-          cx="60"
-          cy="60"
-        />
+      <audio src="http://soundbible.com/mp3/service-bell_daniel_simion.mp3"></audio>
+      <svg class="progress-ring">
+        <circle class="progress-ring__circle" stroke-width="8" fill="transparent" r="110" cx="120" cy="120" />
       </svg>
+      <svg class="static-ring">
+        <circle class="static-ring__circle" stroke-width="8" fill="transparent" r="110" cx="120" cy="120" />
+      </svg>
+      <p class="session">🤓 Focus</p>
+      <button class="start">&nbsp;</button>
+      <button class="reset"><i>⟲</i> Reset</button>
+      <button class="pause">&nbsp;</button>
     </figure>
-
-    <div class="btn-group">
-      <button class="start">start focus</button>
-      <button class="reset">reset</button>
-      <button class="pause">pause</button>
-    </div>
 
     <form action=".">
       <label for="focusTime">Focus Time</label>
       <input type="number" value="1" id="focusTime" />
       <label for="breakTime">Break Time</label>
       <input type="number" value="1" id="breakTime" />
-      <button type="submit">Save settings</button>
+      <button type="submit">Save settings</button> 
+      <p>🛈 Settings apply for next Session.</p>
     </form>
-    <footer>
-      Coded by
-      <a
-        href="https://www.youtube.com/channel/UC74BFCI_FbThOjUqx6gmccg"
-        target="_blank"
-        >abhik-b</a
-      >
-    </footer>
 
     <script src="settings.js"></script>
     <script src="timer.js"></script>
     <script src="progress.js"></script>
-  </body>
+  </div>
+  <footer>
+    Base code by <a href="https://www.youtube.com/channel/UC74BFCI_FbThOjUqx6gmccg" target="_blank">abhik-b</a>.
+    Mod by <a href="https://github.com/tobealive" target="_blank">tobealive</a>.
+  </footer>
+</body>
+
 </html>
